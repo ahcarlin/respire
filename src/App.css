@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+.mySliderContainer {
+  padding: 22px 22px;
+  width: 500px;
+}
