@@ -32,7 +32,11 @@
   }
 }
 
-.mySliderContainer {
+.sliderBox {
   padding: 22px 22px;
   width: 500px;
+}
+
+.mySlider {
+  padding: 22px 0px;
 }
