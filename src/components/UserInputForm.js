@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import React, { useGlobal } from 'reactn';
 import { TextField, FormControlLabel, Switch, InputAdornment } from '@material-ui/core';
 
 const UserInputForm = () => {
 
     const [useMetric, toggleMetric] = useState(true)
+
+    const [ weight, setWeight ] = useGlobal("weight")
     let [unit, switchLabel] = useMetric ? [{height: "cm", weight: "kg"}, "Metric"] 
         : [{height:"in", weight: "lbs"}, "Imperial"]
 
@@ -23,6 +26,8 @@ const UserInputForm = () => {
             <TextField
                 margin="normal"
                 label='Weight'
+                defaultValue={weight}
+                onChange={(e) => setWeight(e.target.value)}
                 InputProps={{
                     endAdornment: <InputAdornment position="end">{unit.weight}</InputAdornment>
                 }}
