@@ -7,6 +7,7 @@ const UserInputForm = () => {
     const [useMetric, toggleMetric] = useState(true);
     const convert = useGlobal('convert');
     const [ weight, setWeight ] = useGlobal("weight");
+    const [ gender, setGender ] = useState("male");
     let [unit, switchLabel] = useMetric ? [{height: "cm", weight: "kg"}, "Metric"] 
         : [{height:"in", weight: "lbs"}, "Imperial"]
 
@@ -27,19 +28,10 @@ const UserInputForm = () => {
             labelPlacement="start"
             />
             <br />
-            <FormControlLabel
-                control={
-                    <Radio/>
-                }
-                value="Male"
-                label="Male"
-            />
-            <br />
-            <FormControlLabel
-                control={<Radio/>}
-                value="Female"
-                label="Female"
-            />
+            <RadioGroup value={gender} onChange={(e) => setGender(e.target.value)}>
+                <FormControlLabel control={<Radio/>} value="male" label="Male" />
+                <FormControlLabel control={<Radio/>} value="female" label="Female" />
+            </RadioGroup>
             <br />
             <TextField
                 margin="normal"
