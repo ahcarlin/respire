@@ -45,6 +45,14 @@ const UserInputForm = () => {
             <br />
             <TextField 
                 margin="normal"
+                label="Height"
+                InputProps={{
+                    endAdornment: <InputAdornment position="end">{unit.height}</InputAdornment>
+                }}
+            />
+            <br />
+            <TextField 
+                margin="normal"
                 label='Body Fat'
             />
         </form>
