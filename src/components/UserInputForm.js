@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import React, { useGlobal } from 'reactn';
-import { TextField, FormControlLabel, Switch, InputAdornment } from '@material-ui/core';
+import { TextField, FormControlLabel, Switch, InputAdornment, Checkbox } from '@material-ui/core';
 
 const UserInputForm = () => {
 
-    const [useMetric, toggleMetric] = useState(true)
-
-    const [ weight, setWeight ] = useGlobal("weight")
+    const [useMetric, toggleMetric] = useState(true);
+    const convert = useGlobal('convert');
+    const [ weight, setWeight ] = useGlobal("weight");
     let [unit, switchLabel] = useMetric ? [{height: "cm", weight: "kg"}, "Metric"] 
         : [{height:"in", weight: "lbs"}, "Imperial"]
 
@@ -15,12 +15,26 @@ const UserInputForm = () => {
             <FormControlLabel control={
                 <Switch 
                     checked={useMetric}
-                    onChange={() => toggleMetric(useMetric => !useMetric)}
+                    onChange={() => {
+                        toggleMetric(useMetric => !useMetric);
+                        convert();
+                        console.log(weight)
+                    }}
                     color="primary"
                 />        
             }
             label={switchLabel}
             labelPlacement="start"
+            />
+            <br />
+            <FormControlLabel
+                control={
+                    <Checkbox
+                        color="primary"
+                        value='checkM'
+                    />
+                }
+                label="Male"
             />
             <br />
             <TextField

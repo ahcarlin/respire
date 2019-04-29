@@ -1,4 +1,4 @@
-import React, { setGlobal } from 'reactn';
+import React, { setGlobal, addReducer } from 'reactn';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,6 +8,10 @@ setGlobal({
     weight: 81,
     bodyfat: 11
 })
+
+addReducer('convert', (global, x = 2.204) => ({
+    weight: global.weight * x
+}));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
