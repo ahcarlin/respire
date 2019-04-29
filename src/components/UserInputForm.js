@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React, { useGlobal } from 'reactn';
-import { TextField, FormControlLabel, Switch, InputAdornment, Checkbox } from '@material-ui/core';
+import { TextField, FormControlLabel, Switch, InputAdornment, Radio, RadioGroup } from '@material-ui/core';
 
 const UserInputForm = () => {
 
@@ -29,12 +29,16 @@ const UserInputForm = () => {
             <br />
             <FormControlLabel
                 control={
-                    <Checkbox
-                        color="primary"
-                        value='checkM'
-                    />
+                    <Radio/>
                 }
+                value="Male"
                 label="Male"
+            />
+            <br />
+            <FormControlLabel
+                control={<Radio/>}
+                value="Female"
+                label="Female"
             />
             <br />
             <TextField
