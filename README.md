@@ -6,3 +6,5 @@
 * Adjust those needs based on adaptive thermogenesis
 * Have a weekly view for planning weight loss/gain with undulating intake
 * Weekly view allows a user to mark days as fasting days (0 caloric intake)
+
+Respiratory Quotient (RQ) is a measure of the difference between oxygen inhaled and carbon dioxide exhaled. RQ is highly influenced by diet, both in terms of energy balance and macronutrient composition.
