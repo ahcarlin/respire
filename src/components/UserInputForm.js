@@ -8,6 +8,7 @@ const UserInputForm = () => {
     const convert = useGlobal('convert');
     const [ weight, setWeight ] = useGlobal("weight");
     const [ gender, setGender ] = useState("male");
+    const [ age, setAge ] = useState(30);
     let [unit, switchLabel] = useMetric ? [{height: "cm", weight: "kg"}, "Metric"] 
         : [{height:"in", weight: "lbs"}, "Imperial"]
 
@@ -53,7 +54,14 @@ const UserInputForm = () => {
             <br />
             <TextField 
                 margin="normal"
-                label='Body Fat'
+                label="Age"
+                defaultValue={age}
+                onChange={(e) => setAge(e.target.value)}
+            />
+            <br />
+            <TextField 
+                margin="normal"
+                label='Body Fat (optional)'
                 InputProps={{
                     endAdornment: <InputAdornment position="end">%</InputAdornment>
                 }}
