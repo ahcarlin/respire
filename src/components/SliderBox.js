@@ -5,7 +5,7 @@ import MySlider from './MySlider'
 const SliderBox = () => {
     return (
         <div className="sliderBox">
-            <Typography align='left'>Fat Balance</Typography>
+            <Typography>Fat Balance</Typography>
             <MySlider defaultValue={23}/>
         </div>
     )

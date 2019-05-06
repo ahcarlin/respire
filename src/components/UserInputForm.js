@@ -29,7 +29,7 @@ const UserInputForm = () => {
             labelPlacement="start"
             />
             <br />
-            <RadioGroup value={gender} onChange={(e) => setGender(e.target.value)}>
+            <RadioGroup class="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
                 <FormControlLabel control={<Radio/>} value="male" label="Male" />
                 <FormControlLabel control={<Radio/>} value="female" label="Female" />
             </RadioGroup>
