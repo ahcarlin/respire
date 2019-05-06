@@ -35,6 +35,7 @@ const UserInputForm = () => {
             </RadioGroup>
             <br />
             <TextField
+                required
                 margin="normal"
                 label='Weight'
                 defaultValue={weight}
@@ -44,7 +45,8 @@ const UserInputForm = () => {
                 }}
             />
             <br />
-            <TextField 
+            <TextField
+                required 
                 margin="normal"
                 label="Height"
                 InputProps={{
@@ -52,7 +54,8 @@ const UserInputForm = () => {
                 }}
             />
             <br />
-            <TextField 
+            <TextField
+                required 
                 margin="normal"
                 label="Age"
                 defaultValue={age}
@@ -61,7 +64,7 @@ const UserInputForm = () => {
             <br />
             <TextField 
                 margin="normal"
-                label='Body Fat (optional)'
+                label='Body Fat'
                 InputProps={{
                     endAdornment: <InputAdornment position="end">%</InputAdornment>
                 }}
