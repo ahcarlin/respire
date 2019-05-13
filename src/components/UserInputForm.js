@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React, { useGlobal } from 'reactn';
-import { Button, TextField, FormControlLabel, Switch, IconButton, InputAdornment, Radio, RadioGroup } from '@material-ui/core';
+import { Button, TextField, FormControlLabel, Switch, IconButton, InputAdornment, Tooltip, Radio, RadioGroup } from '@material-ui/core';
 import HelpOutline from '@material-ui/icons/HelpOutline';
 
 const UserInputForm = () => {
@@ -71,6 +71,7 @@ const UserInputForm = () => {
                 }}
             />
             <IconButton color="secondary"><HelpOutline/></IconButton>
+            <Tooltip>Testing</Tooltip>
             <br />
             <Button variant="contained">Calculate</Button>
         </form>
