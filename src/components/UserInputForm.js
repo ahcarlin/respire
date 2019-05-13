@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React, { useGlobal } from 'reactn';
-import { Button, TextField, FormControlLabel, Switch, InputAdornment, Radio, RadioGroup } from '@material-ui/core';
+import { Button, TextField, FormControlLabel, Switch, Icon, IconButton, InputAdornment, Radio, RadioGroup } from '@material-ui/core';
 
 const UserInputForm = () => {
 
@@ -69,6 +69,7 @@ const UserInputForm = () => {
                     endAdornment: <InputAdornment position="end">%</InputAdornment>
                 }}
             />
+            <IconButton color="secondary"><Icon>help_outline</Icon></IconButton>
             <br />
             <Button variant="contained">Calculate</Button>
         </form>
