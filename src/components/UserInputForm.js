@@ -8,8 +8,8 @@ const UserInputForm = () => {
     const [useMetric, toggleMetric] = useState(true);
     const convert = useGlobal('convert');
     const [ weight, setWeight ] = useGlobal("weight");
+    const [ bodyfat, setBodyfat ] = useGlobal("bodyfat");
     const [ gender, setGender ] = useState("male");
-    const [ age, setAge ] = useState(30);
     let [unit, switchLabel] = useMetric ? [{height: "cm", weight: "kg"}, "Metric"] 
         : [{height:"in", weight: "lbs"}, "Imperial"]
 
@@ -46,33 +46,19 @@ const UserInputForm = () => {
                 }}
             />
             <br />
-            <TextField
-                required 
-                margin="normal"
-                label="Height"
-                InputProps={{
-                    endAdornment: <InputAdornment position="end">{unit.height}</InputAdornment>
-                }}
-            />
-            <br />
-            <TextField
-                required 
-                margin="normal"
-                label="Age"
-                defaultValue={age}
-                onChange={(e) => setAge(e.target.value)}
-            />
-            <br />
             <TextField 
                 margin="normal"
                 label='Body Fat'
+                defaultValue={bodyfat}
                 InputProps={{
                     endAdornment: <InputAdornment position="end">%</InputAdornment>
                 }}
             />
-            <IconButton color="secondary"><HelpOutline/></IconButton>
-            <Tooltip>Testing</Tooltip>
             <br />
+            {/* TODO: make modal calculator
+            <IconButton color="secondary"><HelpOutline/></IconButton>
+            
+            */}
             <Button variant="contained">Calculate</Button>
         </form>
     )
