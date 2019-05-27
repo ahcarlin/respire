@@ -5,23 +5,23 @@ import HelpOutline from '@material-ui/icons/HelpOutline';
 
 const UserInputForm = () => {
 
-    const [useMetric, toggleMetric] = useState(true);
+    const [metric, setMetric] = useGlobal("metric");
     const convert = useGlobal('convert');
     const [ weight, setWeight ] = useGlobal("weight");
     const [ bodyfat, setBodyfat ] = useGlobal("bodyfat");
     const [ gender, setGender ] = useState("male");
-    let [unit, switchLabel] = useMetric ? ["kg", "Metric"] 
+    let [unit, switchLabel] = metric ? ["kg", "Metric"] 
         : ["lbs", "Imperial"]
 
     return (
         <form className="userInputForm">
             <FormControlLabel control={
                 <Switch 
-                    checked={useMetric}
+                    checked={metric}
                     onChange={() => {
-                        toggleMetric(useMetric => !useMetric);
-                        convert();
-                        console.log(weight)
+                        setMetric(!metric);
+                        // convert();
+                        console.log(metric)
                     }}
                     color="primary"
                 />        

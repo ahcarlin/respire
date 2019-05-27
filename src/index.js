@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 setGlobal({
     weight: 81,
+    metric: true,
     bodyfat: 11
 })
 
