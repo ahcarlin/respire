@@ -10,8 +10,8 @@ const UserInputForm = () => {
     const [ weight, setWeight ] = useGlobal("weight");
     const [ bodyfat, setBodyfat ] = useGlobal("bodyfat");
     const [ gender, setGender ] = useState("male");
-    let [unit, switchLabel] = useMetric ? [{height: "cm", weight: "kg"}, "Metric"] 
-        : [{height:"in", weight: "lbs"}, "Imperial"]
+    let [unit, switchLabel] = useMetric ? ["kg", "Metric"] 
+        : ["lbs", "Imperial"]
 
     return (
         <form className="userInputForm">
@@ -42,7 +42,7 @@ const UserInputForm = () => {
                 defaultValue={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 InputProps={{
-                    endAdornment: <InputAdornment position="end">{unit.weight}</InputAdornment>
+                    endAdornment: <InputAdornment position="end">{unit}</InputAdornment>
                 }}
             />
             <br />
@@ -50,6 +50,7 @@ const UserInputForm = () => {
                 margin="normal"
                 label='Body Fat'
                 defaultValue={bodyfat}
+                onChange={(e) => setBodyfat(e.target.value)}
                 InputProps={{
                     endAdornment: <InputAdornment position="end">%</InputAdornment>
                 }}
