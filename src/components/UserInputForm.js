@@ -6,7 +6,6 @@ import HelpOutline from '@material-ui/icons/HelpOutline';
 const UserInputForm = () => {
 
     const [metric, setMetric] = useGlobal("metric");
-    const convert = useGlobal('convert');
     const [ weight, setWeight ] = useGlobal("weight");
     const [ bodyfat, setBodyfat ] = useGlobal("bodyfat");
     const [ gender, setGender ] = useState("male");
@@ -20,7 +19,11 @@ const UserInputForm = () => {
                     checked={metric}
                     onChange={() => {
                         setMetric(!metric);
-                        // convert();
+                        if (metric) {
+                            setWeight(weight * 2.204)
+                        } else {
+                            setWeight(weight / 2.204)
+                        }
                         console.log(metric)
                     }}
                     color="primary"

@@ -10,9 +10,9 @@ setGlobal({
     bodyfat: 11
 })
 
-addReducer('convert', (global, x = 2.204) => ({
-    weight: global.weight * x
-}));
+// addReducer('convert', (global, x = 2.204) => ({
+//     weight: global.weight * x
+// }));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
