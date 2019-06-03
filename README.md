@@ -1,6 +1,6 @@
-#Respire
+# Respire
 
-###React SPA for finding energy and macronutrient requirements with a focus on respiratory quotient. 
+### React SPA for finding energy and macronutrient requirements with a focus on respiratory quotient. 
 
 * Estimate energy needs based on weight, body fat percentage
   * Include US Navy Body Fat calculator to estimate body fat percentage
